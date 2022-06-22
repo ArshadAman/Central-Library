@@ -138,5 +138,29 @@ class Submit extends Display{
     }
 }
 
+
+//To be implemented in the DOM
+class Library{
+    constructor(bookList){
+        this.bookList = bookList;
+        this.issuedBooks = {};
+    }
+
+    getBookList(){
+        this.bookList.forEach(element=>{
+            console.log(element);
+        })
+    }
+
+    issueBook(bookname, user){
+        this.issuedBooks[bookname] = user;
+    }
+
+    returnBook(bookname){
+        delete this.issuedBooks[bookname];
+        this.bookList
+    }
+}
+
 let submit = new Submit();
 submit.show();
