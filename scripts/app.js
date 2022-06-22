@@ -153,7 +153,12 @@ class Library{
     }
 
     issueBook(bookname, user){
-        this.issuedBooks[bookname] = user;
+        if (this.issuedBooks[bookname] == undefined){
+            this.issuedBooks[bookname] = user;
+        }
+        else{
+            console.log('This book is already issued')
+        }
     }
 
     returnBook(bookname){
